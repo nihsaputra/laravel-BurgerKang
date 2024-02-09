@@ -58,6 +58,8 @@ class CategoryController extends Controller
 
     public function update(Request $request, $id)
     {
+        Category::findOrfail($id);
+
         $validate = $request->validate([
             'name' => 'required|unique:categories|min:3'
         ]);
