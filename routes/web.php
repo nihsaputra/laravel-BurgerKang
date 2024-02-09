@@ -30,23 +30,22 @@ Route::get('/', [DashboardController::class, 'index'])->middleware('auth');
 
 // CATEGORY
 Route::resource('categories', CategoryController::class);
-
 Route::get('/categories', [CategoryController::class, 'index'])->middleware('auth');
 Route::get('/categories/create', [CategoryController::class, 'create'])->middleware('auth');
 Route::get('/categories/{id}', [CategoryController::class, 'show'])->middleware('auth');
+Route::get('/categories/edit/{id}', [CategoryController::class, 'edit'])->middleware('auth');
 Route::post('/categories', [CategoryController::class, 'store'])->middleware('auth');
-Route::put('/categories/{id}', [CategoryController::class, 'edit'])->middleware('auth');
+Route::put('/categories/{id}', [CategoryController::class, 'update'])->middleware('auth');
 Route::delete('/categories/{id}', [CategoryController::class, 'destroy'])->middleware('auth');
 
 
 // PRODUCT
 Route::resource('products', ProductController::class);
-
 Route::get('/products',[ProductController::class, 'index'])->middleware('auth');
 Route::get('/products/create',[ProductController::class, 'create'])->middleware('auth');
-Route::get('/products/{id}',[ProductController::class, 'show'])->middleware('auth');
+Route::get('/products/edit/{id}',[ProductController::class, 'edit'])->middleware('auth');
 Route::post('/products',[ProductController::class, 'store'])->middleware('auth');
-Route::put('/products/{id}',[ProductController::class, 'edit'])->middleware('auth');
+Route::put('/products/{id}',[ProductController::class, 'update'])->middleware('auth');
 Route::delete('/products/{id}',[ProductController::class, 'destroy'])->middleware('auth');
 
 

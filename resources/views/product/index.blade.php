@@ -27,7 +27,6 @@
             <td> {{ $product->price }} </td>
             <td> {{ $product->stock }} </td>
             <td>
-                <a href="/products/{{$product->id}}" class="btn btn-warning">View</a>
                 <a href="/products/edit/{{$product->id}}" class="btn btn-success">Edit</a>
                 <a href="/products/delete/{{$product->id}}" class="btn btn-danger">Delete</a>
             </td>

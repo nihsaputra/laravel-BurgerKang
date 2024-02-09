@@ -10,14 +10,14 @@ Terdapat featur :
 - Report [CRUD]
 
 ## ERD
-- table user
+- table users
 ```
 id*
 name
 email
 password
 ```
-- table product
+- table products
 ```
 id*
 name
@@ -25,18 +25,18 @@ price
 stock
 category_id (reference : category)
 ```
-- table category
+- table categories
 ```
 id*
 name
 ```
-- table order
+- table orders
 ```
 id*
 customer_name
 created_at
 ```
-- table order_detail
+- table order_details
 ```
 id*
 order_id (reference : order)
@@ -77,6 +77,19 @@ get    /dashboard
 
 
 ```
+- Category http request :
+
+```
+#auth (login)
+
+get         /categories
+get         /categories/create
+get         /categories/{id}
+get         /categories/edit/{id}
+post        /categories
+put         /categories/{id}
+delete      /categories/{id}
+```
 
 - Product http request :
 
@@ -90,20 +103,6 @@ post        /products
 put         /products/{id}
 delete      /products/{id}
 
-```
-
-
-- Category http request :
-
-```
-#auth (login)
-
-get         /categories
-get         /categories/create
-get         /categories/{id}
-post        /categories
-put         /categories/{id}
-delete      /categories/{id}
 ```
 
 - Order
