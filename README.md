@@ -105,7 +105,6 @@ post    /categories/add
 post    /categories/edit
 get     /categories/delete/{id}
 ```
-<hr>
 
 - Order
 Http request :

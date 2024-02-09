@@ -30,9 +30,21 @@ Route::get('/', [DashboardController::class, 'index'])->middleware('auth');
 
 // CATEGORY
 Route::get('/categories', [CategoryController::class, 'index'])->middleware('auth');
+Route::get('/categories/{id}', [CategoryController::class, 'index'])->middleware('auth');
+Route::get('/categories/add', [CategoryController::class, 'index'])->middleware('auth');
+Route::post('/categories/add', [CategoryController::class, 'index'])->middleware('auth');
+Route::post('/categories/edit', [CategoryController::class, 'index'])->middleware('auth');
+Route::get('/categories/delete/{id}', [CategoryController::class, 'index'])->middleware('auth');
+
 
 // PRODUCT
 Route::get('/products',[ProductController::class, 'index'])->middleware('auth');
+Route::get('/products/{id}',[ProductController::class, 'index'])->middleware('auth');
+Route::get('/products/add',[ProductController::class, 'index'])->middleware('auth');
+Route::post('/products/add',[ProductController::class, 'index'])->middleware('auth');
+Route::post('/products/edit',[ProductController::class, 'index'])->middleware('auth');
+Route::get('/products/delete/{id}',[ProductController::class, 'index'])->middleware('auth');
+
 
 // ORDER
 Route::get('/orders', function () {
