@@ -98,7 +98,7 @@ delete      /categories/{id}
 
 get         /products
 get         /products/create
-get         /products/{id}
+get         /products/edit{id}
 post        /products
 put         /products/{id}
 delete      /products/{id}
