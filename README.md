@@ -83,12 +83,12 @@ get    /dashboard
 ```
 #auth (login)
 
-get    /products
-get    /products/{id}
-get    /products/add
-post   /products/add
-post   /products/edit
-get    /products/delete/{id}
+get         /products
+get         /products/create
+get         /products/{id}
+post        /products
+put         /products/{id}
+delete      /products/{id}
 
 ```
 
@@ -98,12 +98,12 @@ get    /products/delete/{id}
 ```
 #auth (login)
 
-get     /categories
-get     /categories/{id}
-get     /categories/add
-post    /categories/add
-post    /categories/edit
-get     /categories/delete/{id}
+get         /categories
+get         /categories/create
+get         /categories/{id}
+post        /categories
+put         /categories/{id}
+delete      /categories/{id}
 ```
 
 - Order
@@ -113,9 +113,9 @@ Http request :
 #auth (login)
 
 get     /orders
+get     /orders/create
 get     /corders/{id}
-get     /categories/add
-post    /categories/add
+post    /orders
 ```
 
 ## INTERFACE
