@@ -10,14 +10,14 @@ Terdapat featur :
 - Report [CRUD]
 
 ## ERD
-user
+- table user
 ```
 id*
 name
 email
 password
 ```
-product
+- table product
 ```
 id*
 name
@@ -25,18 +25,18 @@ price
 stock
 category_id (reference : category)
 ```
-category
+- table category
 ```
 id*
 name
 ```
-order
+- table order
 ```
 id*
 customer_name
 created_at
 ```
-order_detail
+- table order_detail
 ```
 id*
 order_id (reference : order)
@@ -45,37 +45,44 @@ quantity
 price
 ```
 ## END POINT
-register
+authentication 
 
-<p>Http request :</p>
+- Register http request :
 
 ```
 get: /register
 post: /register
 ```
-<hr>
 
-login
-<p>Http request :</p>
+- Login http request :
 
 ```
 get    /login
 post   /login
 ```
-<hr>
 
-logout
-<p>Http request :</p>
+- Logout http request :
 
 ```
 get /logout
 ```
-<hr>
 
-product
-<p>Http request :</p>
+- Dashboard http request :
 
 ```
+#auth (login)
+
+get    /
+get    /dashboard
+
+
+```
+
+- Product http request :
+
+```
+#auth (login)
+
 get    /products
 get    /products/{id}
 get    /products/add
@@ -84,12 +91,13 @@ post   /products/edit
 get    /products/delete/{id}
 
 ```
-<hr>
 
-category
-<p>Http request :</p>
+
+- Category http request :
 
 ```
+#auth (login)
+
 get     /categories
 get     /categories/{id}
 get     /categories/add
@@ -99,10 +107,12 @@ get     /categories/delete/{id}
 ```
 <hr>
 
-Order
-<p>Http request :</p>
+- Order
+Http request :
 
 ```
+#auth (login)
+
 get     /orders
 get     /corders/{id}
 get     /categories/add
