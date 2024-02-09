@@ -118,3 +118,16 @@ get     /corders/{id}
 get     /categories/add
 post    /categories/add
 ```
+
+## INTERFACE
+- login
+![img.png](img.png)
+- register
+![img_1.png](img_1.png)
+- dashboard
+![img_2.png](img_2.png)
+- product
+![img_3.png](img_3.png)
+- category
+![img_4.png](img_4.png)
+
