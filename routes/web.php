@@ -1,5 +1,10 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +18,33 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Auth
+Route::get('/login', [LoginController::class, 'index'])->name('login');
+Route::post('/login', [LoginController::class, 'authenticate']);
+Route::get('/logout', [LoginController::class, 'logout']);
+Route::get('/register', [RegisterController::class,'index']);
+Route::post('/register', [RegisterController::class,'store']);
+
+// DASHBOARD
+Route::get('/', [DashboardController::class, 'index'])->middleware('auth');
+
+// CATEGORY
+Route::get('/categories', [CategoryController::class, 'index'])->middleware('auth');
+
+// PRODUCT
+Route::get('/products',[ProductController::class, 'index'])->middleware('auth');
+
+// ORDER
+Route::get('/orders', function () {
+    return view('order/index',[
+        'title' => 'Orders'
+    ]);
+})->middleware('auth');
+
+// REPORT
+Route::get('/reports', function () {
+    return view('report/index',[
+        'title' => 'Reports'
+    ]);
+})->middleware('auth');
+
