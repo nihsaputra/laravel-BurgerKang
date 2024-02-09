@@ -9,9 +9,23 @@ class CategoryController extends Controller
 {
     public function index()
     {
-        return view('category/index',[
+        return view('category.index',[
             'title' => 'Categories',
             'categories' => Category::latest()->get()
+        ]);
+    }
+
+    public function create()
+    {
+        return view('category.create',[
+           'title' => 'Categories'
+        ]);
+    }
+
+    public function show()
+    {
+        return view('category.create',[
+            'title' => 'Categories'
         ]);
     }
 }

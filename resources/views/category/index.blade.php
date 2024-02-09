@@ -3,7 +3,7 @@
 @section('content')
     <h1 class="mb-5">Categories</h1>
 
-    <a href="/categories" class="btn btn-primary mb-2">Add New</a>
+    <a href="/categories/add" class="btn btn-primary mb-2">Add New</a>
     <table class="table">
         <thead>
         <tr>

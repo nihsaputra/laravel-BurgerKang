@@ -29,21 +29,25 @@ Route::post('/register', [RegisterController::class,'store']);
 Route::get('/', [DashboardController::class, 'index'])->middleware('auth');
 
 // CATEGORY
+Route::resource('categories', CategoryController::class);
+
 Route::get('/categories', [CategoryController::class, 'index'])->middleware('auth');
-Route::get('/categories/{id}', [CategoryController::class, 'index'])->middleware('auth');
-Route::get('/categories/add', [CategoryController::class, 'index'])->middleware('auth');
-Route::post('/categories/add', [CategoryController::class, 'index'])->middleware('auth');
-Route::post('/categories/edit', [CategoryController::class, 'index'])->middleware('auth');
-Route::get('/categories/delete/{id}', [CategoryController::class, 'index'])->middleware('auth');
+Route::get('/categories/create', [CategoryController::class, 'create'])->middleware('auth');
+Route::get('/categories/{id}', [CategoryController::class, 'show'])->middleware('auth');
+Route::post('/categories', [CategoryController::class, 'store'])->middleware('auth');
+Route::put('/categories/{id}', [CategoryController::class, 'edit'])->middleware('auth');
+Route::delete('/categories/{id}', [CategoryController::class, 'destroy'])->middleware('auth');
 
 
 // PRODUCT
+Route::resource('products', ProductController::class);
+
 Route::get('/products',[ProductController::class, 'index'])->middleware('auth');
-Route::get('/products/{id}',[ProductController::class, 'index'])->middleware('auth');
-Route::get('/products/add',[ProductController::class, 'index'])->middleware('auth');
-Route::post('/products/add',[ProductController::class, 'index'])->middleware('auth');
-Route::post('/products/edit',[ProductController::class, 'index'])->middleware('auth');
-Route::get('/products/delete/{id}',[ProductController::class, 'index'])->middleware('auth');
+Route::get('/products/create',[ProductController::class, 'create'])->middleware('auth');
+Route::get('/products/{id}',[ProductController::class, 'show'])->middleware('auth');
+Route::post('/products',[ProductController::class, 'store'])->middleware('auth');
+Route::put('/products/{id}',[ProductController::class, 'edit'])->middleware('auth');
+Route::delete('/products/{id}',[ProductController::class, 'destroy'])->middleware('auth');
 
 
 // ORDER
