@@ -8,7 +8,12 @@
         @method('post')
         @csrf
         <div class="mb-3" >
-            <input type="text" class="form-control" id="name" name="name" value="{{old('name')}}" placeholder="category name" required>
+            <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" value="{{old('name')}}" placeholder="category name" required>
+            @error('name')
+            <div class="invalid-feedback">
+                {{$message}}
+            </div>
+            @enderror
         </div>
         <a href="/categories" class="btn btn-secondary">Back</a>
         <button type="submit" class="btn btn-primary">Save</button>
